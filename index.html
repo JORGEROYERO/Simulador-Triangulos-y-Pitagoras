@@ -961,8 +961,6 @@ const TEMA = {
   H2: "Teorema de Pitágoras",
   H3: "Pitágoras en contexto"
 };
-
-// Figura: triángulo rectángulo con etiquetas en base (b), altura (a) e hipotenusa (h)
 function Triangulo({
   fig
 }) {
@@ -974,7 +972,7 @@ function Triangulo({
     y1: 150,
     x2: 46,
     y2: 40
-  }; // ángulo recto en (x0,y0)
+  };
   return /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 290 185",
     width: "100%",
@@ -1080,15 +1078,23 @@ function App() {
     n[idx] = op;
     setRespuestas(n);
   };
-  const enviarSheets = () => {
-    let url = SCRIPT_URL + "?asignatura=" + encodeURIComponent(ASIGNATURA) + "&nombre=" + encodeURIComponent(nombre) + "&curso=" + encodeURIComponent(curso) + "&nivel=" + encodeURIComponent(nivel) + "&correctas=" + resultado.correctas + "&incorrectas=" + resultado.incorrectas + "&porcentaje=" + resultado.pct + "&fecha=" + encodeURIComponent(new Date().toLocaleString("es-CO"));
+  const enviarSheets = res => {
+    let url = SCRIPT_URL + "?asignatura=" + encodeURIComponent(ASIGNATURA) + "&nombre=" + encodeURIComponent(nombre) + "&curso=" + encodeURIComponent(curso) + "&nivel=" + encodeURIComponent(nivel) + "&correctas=" + res.correctas + "&incorrectas=" + res.incorrectas + "&porcentaje=" + res.pct + "&fecha=" + encodeURIComponent(new Date().toLocaleString("es-CO"));
     PREGUNTAS.forEach((q, i) => {
       let marca;
       if (respuestas[i] === null || respuestas[i] === undefined) marca = "-";else if (respuestas[i] === q.correcta) marca = "✓";else marca = "✗";
       url += "&p" + q.n + "=" + encodeURIComponent(marca);
     });
     window.open(url, "_blank");
-    setEnviado(true);
+  };
+
+  // Envío automático al finalizar el nivel (una sola vez)
+  const finalizar = () => {
+    if (!enviado) {
+      enviarSheets(resultado);
+      setEnviado(true);
+    }
+    setFase("resultados");
   };
   const ff = "'Segoe UI', system-ui, -apple-system, sans-serif";
 
@@ -1201,7 +1207,7 @@ function App() {
         marginTop: 16,
         lineHeight: 1.5
       }
-    }, "Cada nivel tiene 20 preguntas que combinan las partes del triángulo rectángulo, el cálculo con el Teorema de Pitágoras y problemas en contexto. Puedes navegar entre ellas y cambiar tus respuestas antes de finalizar."))));
+    }, "Cada nivel tiene 20 preguntas que combinan las partes del triángulo rectángulo, el cálculo con el Teorema de Pitágoras y problemas en contexto. Al finalizar, el resultado se envía automáticamente."))));
   }
 
   // ---- Resultados ----
@@ -1290,7 +1296,7 @@ function App() {
         display: "flex",
         gap: 12,
         justifyContent: "center",
-        marginBottom: 18
+        marginBottom: 16
       }
     }, /*#__PURE__*/React.createElement(Pill, {
       label: "Correctas",
@@ -1300,7 +1306,15 @@ function App() {
       label: "Incorrectas",
       value: resultado.incorrectas,
       color: C.bad
-    })), /*#__PURE__*/React.createElement("div", {
+    })), /*#__PURE__*/React.createElement("p", {
+      style: {
+        textAlign: "center",
+        color: C.good,
+        fontSize: 13,
+        fontWeight: 700,
+        margin: "0 0 16px"
+      }
+    }, "✓ Resultado enviado automáticamente"), /*#__PURE__*/React.createElement("div", {
       style: {
         display: "flex",
         gap: 10,
@@ -1308,31 +1322,220 @@ function App() {
         flexWrap: "wrap"
       }
     }, /*#__PURE__*/React.createElement("button", {
-      onClick: enviarSheets,
+      onClick: () => {
+        setIdx(0);
+        setFase("revision");
+      },
       style: {
         ...btn
       }
-    }, enviado ? "Registrar de nuevo" : "Registrar resultado en Google Sheets"), /*#__PURE__*/React.createElement("button", {
-      onClick: () => {
-        setFase("examen");
-        setIdx(0);
-      },
-      style: {
-        ...btnGhost
-      }
-    }, "Revisar respuestas"), /*#__PURE__*/React.createElement("button", {
+    }, "Revisar mis respuestas"), /*#__PURE__*/React.createElement("button", {
       onClick: () => setFase("registro"),
       style: {
         ...btnGhost
       }
-    }, "Cambiar de nivel")), enviado && /*#__PURE__*/React.createElement("p", {
+    }, "Cambiar de nivel"))));
+  }
+
+  // ---- Revisión (solo lectura, resaltando correcta y seleccionada) ----
+  if (fase === "revision") {
+    const p = PREGUNTAS[idx];
+    const sel = respuestas[idx];
+    return /*#__PURE__*/React.createElement("div", {
       style: {
-        textAlign: "center",
-        color: C.good,
-        fontSize: 12.5,
-        marginTop: 12
+        ...wrap,
+        fontFamily: ff
       }
-    }, "Se abrió una pestaña para enviar los datos. Si tu navegador bloqueó la ventana emergente, permítela e inténtalo de nuevo.")));
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        ...card,
+        maxWidth: 720,
+        margin: "0 auto"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: 14
+      }
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 12,
+        fontWeight: 700,
+        color: C.amber
+      }
+    }, "REVISIÓN · NIVEL ", nivel.toUpperCase()), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 12,
+        color: C.muted,
+        marginLeft: 10
+      }
+    }, TEMA[p.tema])), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 13,
+        color: C.muted
+      }
+    }, "Pregunta ", idx + 1, " de ", total)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 14,
+        fontSize: 11.5,
+        color: C.muted,
+        marginBottom: 16
+      }
+    }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "inline-block",
+        width: 11,
+        height: 11,
+        background: "#d4f5e6",
+        border: `1px solid ${C.good}`,
+        borderRadius: 3,
+        marginRight: 5,
+        verticalAlign: "middle"
+      }
+    }), "Respuesta correcta"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "inline-block",
+        width: 11,
+        height: 11,
+        background: "#fbe0d8",
+        border: `1px solid ${C.bad}`,
+        borderRadius: 3,
+        marginRight: 5,
+        verticalAlign: "middle"
+      }
+    }), "Tu elección (si fallaste)")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 17,
+        color: C.ink,
+        lineHeight: 1.5,
+        fontWeight: 600,
+        marginBottom: 10
+      }
+    }, p.n, ". ", p.enunciado), p.fig && /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "center"
+      }
+    }, /*#__PURE__*/React.createElement(Triangulo, {
+      fig: p.fig
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gap: 10,
+        marginTop: 8
+      }
+    }, p.opciones.map((op, i) => {
+      const esCorrecta = p.correcta === i;
+      const esSeleccionada = sel === i;
+      let bg = "#fff",
+        bd = `1.5px solid ${C.line}`,
+        col = C.ink,
+        fw = 500,
+        etiqueta = null;
+      if (esCorrecta) {
+        bg = "#d4f5e6";
+        bd = `2px solid ${C.good}`;
+        fw = 700;
+        etiqueta = esSeleccionada ? "✓ Tu respuesta (correcta)" : "✓ Correcta";
+      }
+      if (esSeleccionada && !esCorrecta) {
+        bg = "#fbe0d8";
+        bd = `2px solid ${C.bad}`;
+        fw = 700;
+        etiqueta = "✗ Tu respuesta";
+      }
+      return /*#__PURE__*/React.createElement("div", {
+        key: i,
+        style: {
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "13px 16px",
+          borderRadius: 11,
+          fontSize: 15,
+          border: bd,
+          background: bg,
+          color: col,
+          fontWeight: fw
+        }
+      }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontWeight: 800,
+          color: C.amber,
+          marginRight: 10
+        }
+      }, String.fromCharCode(65 + i), "."), op), etiqueta && /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontSize: 12,
+          fontWeight: 700,
+          color: esCorrecta ? C.good : C.bad,
+          whiteSpace: "nowrap",
+          marginLeft: 10
+        }
+      }, etiqueta));
+    })), (sel === null || sel === undefined) && /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 12.5,
+        color: C.muted,
+        marginTop: 12,
+        fontStyle: "italic"
+      }
+    }, "No respondiste esta pregunta."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginTop: 24,
+        gap: 10
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => setIdx(v => Math.max(0, v - 1)),
+      disabled: idx === 0,
+      style: {
+        ...btnGhost,
+        opacity: idx === 0 ? 0.4 : 1
+      }
+    }, "← Anterior"), idx < total - 1 ? /*#__PURE__*/React.createElement("button", {
+      onClick: () => setIdx(v => Math.min(total - 1, v + 1)),
+      style: {
+        ...btn
+      }
+    }, "Siguiente →") : /*#__PURE__*/React.createElement("button", {
+      onClick: () => setFase("resultados"),
+      style: {
+        ...btn,
+        background: C.good
+      }
+    }, "Volver a resultados")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        flexWrap: "wrap",
+        gap: 6,
+        marginTop: 20
+      }
+    }, PREGUNTAS.map((q, i) => {
+      const ok = respuestas[i] === q.correcta;
+      const cont = respuestas[i] !== null && respuestas[i] !== undefined;
+      const bgc = cont ? ok ? C.good : C.bad : C.card;
+      return /*#__PURE__*/React.createElement("button", {
+        key: i,
+        onClick: () => setIdx(i),
+        style: {
+          width: 30,
+          height: 30,
+          borderRadius: 7,
+          fontSize: 12,
+          fontWeight: 700,
+          cursor: "pointer",
+          border: i === idx ? `2px solid ${C.ink}` : `1px solid ${C.line}`,
+          background: bgc,
+          color: cont ? "#fff" : C.muted
+        }
+      }, q.n);
+    }))));
   }
 
   // ---- Examen ----
@@ -1451,12 +1654,12 @@ function App() {
       ...btn
     }
   }, "Siguiente →") : /*#__PURE__*/React.createElement("button", {
-    onClick: () => setFase("resultados"),
+    onClick: finalizar,
     style: {
       ...btn,
       background: C.good
     }
-  }, "Finalizar y ver resultados")), /*#__PURE__*/React.createElement("div", {
+  }, "Finalizar y enviar")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       flexWrap: "wrap",
