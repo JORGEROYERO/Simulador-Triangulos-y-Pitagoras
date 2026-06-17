@@ -329,22 +329,22 @@ const BANCO = {
     "tema": "H1",
     "enunciado": "En un triángulo rectángulo, ¿cuál es el lado más largo?",
     "fig": null,
-    "opciones": ["La hipotenusa", "Cualquier cateto", "El cateto vertical", "Los tres miden igual"],
-    "correcta": 0
+    "opciones": ["Cualquier cateto", "El cateto vertical", "Los tres miden igual", "La hipotenusa"],
+    "correcta": 3
   }, {
     "n": 2,
     "tema": "H1",
     "enunciado": "¿Frente a qué ángulo se encuentra siempre la hipotenusa?",
     "fig": null,
-    "opciones": ["Frente al ángulo de 90°", "Frente a un ángulo de 45°", "Frente al ángulo más pequeño", "Frente a ningún ángulo"],
-    "correcta": 0
+    "opciones": ["Frente al ángulo más pequeño", "Frente a ningún ángulo", "Frente al ángulo de 90°", "Frente a un ángulo de 45°"],
+    "correcta": 2
   }, {
     "n": 3,
     "tema": "H1",
     "enunciado": "Los dos lados que forman el ángulo recto de un triángulo rectángulo se llaman:",
     "fig": null,
-    "opciones": ["Catetos", "Hipotenusas", "Diagonales", "Bases iguales"],
-    "correcta": 0
+    "opciones": ["Bases iguales", "Catetos", "Hipotenusas", "Diagonales"],
+    "correcta": 1
   }, {
     "n": 4,
     "tema": "H1",
@@ -361,113 +361,93 @@ const BANCO = {
     "tema": "H1",
     "enunciado": "¿Cuántos ángulos rectos (de 90°) tiene un triángulo rectángulo?",
     "fig": null,
-    "opciones": ["Uno", "Dos", "Tres", "Ninguno"],
-    "correcta": 0
+    "opciones": ["Dos", "Tres", "Ninguno", "Uno"],
+    "correcta": 3
   }, {
     "n": 6,
     "tema": "H1",
     "enunciado": "Si un triángulo tiene un ángulo de 90°, ¿cuánto suman sus otros dos ángulos?",
     "fig": null,
-    "opciones": ["90°", "180°", "45°", "120°"],
-    "correcta": 0
+    "opciones": ["45°", "120°", "90°", "180°"],
+    "correcta": 2
   }, {
     "n": 7,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 3 y 4. ¿Cuánto mide la hipotenusa?",
-    "fig": {
-      "b": "3",
-      "a": "4",
-      "h": "?"
-    },
-    "opciones": ["1", "5", "7", "25"],
-    "correcta": 1
-  }, {
-    "n": 8,
-    "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 6 y 8. ¿Cuánto mide la hipotenusa?",
+    "enunciado": "Un triángulo rectángulo tiene catetos a = 6 y b = 8. ¿Cuál procedimiento permite hallar la hipotenusa c?",
     "fig": {
       "b": "6",
       "a": "8",
       "h": "?"
     },
-    "opciones": ["10", "14", "100", "2"],
+    "opciones": ["c = 6 + 8", "c = √(6² + 8²)", "c = 6² + 8²", "c = √(8² − 6²)"],
+    "correcta": 1
+  }, {
+    "n": 8,
+    "tema": "H2",
+    "enunciado": "Según el Teorema de Pitágoras, para hallar la hipotenusa primero se debe:",
+    "fig": null,
+    "opciones": ["Sumar los cuadrados de los dos catetos y luego sacar la raíz cuadrada", "Sumar los dos catetos y luego elevarlos al cuadrado", "Restar los dos catetos y sacar la raíz", "Multiplicar los dos catetos"],
     "correcta": 0
   }, {
     "n": 9,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 5 y 12. ¿Cuánto mide la hipotenusa?",
-    "fig": {
-      "b": "5",
-      "a": "12",
-      "h": "?"
-    },
-    "opciones": ["17", "169", "7", "13"],
+    "enunciado": "¿Cuál de estas igualdades es el Teorema de Pitágoras?",
+    "fig": null,
+    "opciones": ["c = a + b", "c² = a² − b²", "c = a² + b²", "c² = a² + b²"],
     "correcta": 3
   }, {
     "n": 10,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 8 y 15. ¿Cuánto mide la hipotenusa?",
-    "fig": {
-      "b": "8",
-      "a": "15",
-      "h": "?"
-    },
-    "opciones": ["289", "7", "17", "23"],
+    "enunciado": "En la fórmula c² = a² + b², la letra c representa:",
+    "fig": null,
+    "opciones": ["El cateto más corto", "El perímetro", "La hipotenusa", "Un cateto cualquiera"],
     "correcta": 2
   }, {
     "n": 11,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 5 y un cateto de 3. ¿Cuánto mide el otro cateto?",
+    "enunciado": "Un triángulo rectángulo tiene catetos 3 y 4. Si se aplica c = √(3² + 4²), ¿cuál es el valor de c?",
     "fig": {
-      "b": "?",
-      "a": "3",
-      "h": "5"
+      "b": "3",
+      "a": "4",
+      "h": "?"
     },
-    "opciones": ["16", "4", "2", "8"],
+    "opciones": ["12", "5", "7", "25"],
     "correcta": 1
   }, {
     "n": 12,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 13 y un cateto de 5. ¿Cuánto mide el otro cateto?",
+    "enunciado": "Para hallar un cateto cuando se conocen la hipotenusa y el otro cateto, se debe usar:",
+    "fig": null,
+    "opciones": ["Una resta de cuadrados: cateto = √(c² − a²)", "Una suma de cuadrados: cateto = √(c² + a²)", "cateto = c² − a²", "cateto = c − a"],
+    "correcta": 0
+  }, {
+    "n": 13,
+    "tema": "H2",
+    "enunciado": "La hipotenusa de un triángulo rectángulo mide 13 y un cateto mide 5. ¿Cuál planteamiento es correcto para hallar el otro cateto b?",
     "fig": {
       "b": "?",
       "a": "5",
       "h": "13"
     },
-    "opciones": ["12", "8", "18", "144"],
-    "correcta": 0
+    "opciones": ["b = √(13² + 5²)", "b = 13² − 5²", "b = 13 − 5", "b = √(13² − 5²)"],
+    "correcta": 3
   }, {
-    "n": 13,
+    "n": 14,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 9 y 12. ¿Cuánto mide la hipotenusa?",
+    "enunciado": "¿Por qué la hipotenusa nunca puede ser más corta que un cateto?",
+    "fig": null,
+    "opciones": ["Porque los catetos siempre son iguales", "No es cierto: a veces es más corta", "Porque c² = a² + b² siempre da un valor mayor que a² o que b² por separado", "Porque la hipotenusa se mide de otra forma"],
+    "correcta": 2
+  }, {
+    "n": 15,
+    "tema": "H2",
+    "enunciado": "Un estudiante quiere la hipotenusa de catetos 9 y 12 y escribe c = 9 + 12 = 21. ¿Qué error cometió?",
     "fig": {
       "b": "9",
       "a": "12",
       "h": "?"
     },
-    "opciones": ["21", "225", "3", "15"],
-    "correcta": 3
-  }, {
-    "n": 14,
-    "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 10 y un cateto de 6. ¿Cuánto mide el otro cateto?",
-    "fig": {
-      "b": "?",
-      "a": "6",
-      "h": "10"
-    },
-    "opciones": ["16", "64", "8", "4"],
-    "correcta": 2
-  }, {
-    "n": 15,
-    "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 12 y 16. ¿Cuánto mide la hipotenusa?",
-    "fig": {
-      "b": "12",
-      "a": "16",
-      "h": "?"
-    },
-    "opciones": ["4", "20", "28", "400"],
+    "opciones": ["Debió multiplicar 9 × 12", "Sumó los catetos en vez de sumar sus cuadrados y sacar la raíz", "Ninguno, está correcto", "Debió restar los catetos"],
     "correcta": 1
   }, {
     "n": 16,
@@ -530,142 +510,114 @@ const BANCO = {
     "tema": "H1",
     "enunciado": "En un triángulo rectángulo, el lado que NO toca el ángulo recto es:",
     "fig": null,
-    "opciones": ["La hipotenusa", "Un cateto", "La base", "La altura"],
-    "correcta": 0
+    "opciones": ["Un cateto", "La base", "La altura", "La hipotenusa"],
+    "correcta": 3
   }, {
     "n": 2,
     "tema": "H1",
     "enunciado": "Un triángulo tiene lados 6, 8 y 10. ¿Es un triángulo rectángulo?",
     "fig": null,
-    "opciones": ["Sí, porque 6² + 8² = 10²", "No, porque 10 es par", "Sí, porque 6 + 8 > 10", "No, porque le falta información"],
-    "correcta": 0
+    "opciones": ["Sí, porque 6 + 8 > 10", "No, porque le falta información", "Sí, porque 6² + 8² = 10²", "No, porque 10 es par"],
+    "correcta": 2
   }, {
     "n": 3,
     "tema": "H1",
     "enunciado": "En un triángulo rectángulo uno de los ángulos agudos mide 30°. ¿Cuánto mide el otro ángulo agudo?",
     "fig": null,
-    "opciones": ["60°", "30°", "90°", "120°"],
-    "correcta": 0
+    "opciones": ["120°", "60°", "30°", "90°"],
+    "correcta": 1
   }, {
     "n": 4,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 5 y 7. ¿Cuánto mide la hipotenusa?",
+    "enunciado": "Para hallar la hipotenusa de catetos 5 y 7, ¿cuál de estos procedimientos es el correcto?",
     "fig": {
       "b": "5",
       "a": "7",
       "h": "?"
     },
-    "opciones": ["8,6", "12", "74", "2"],
+    "opciones": ["c = √(5² + 7²) = √(25 + 49) = √74", "c = (5 + 7)² = 144", "c = 5² + 7² = 74", "c = √(7² − 5²) = √24"],
     "correcta": 0
   }, {
     "n": 5,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 9 y 7. ¿Cuánto mide la hipotenusa?",
-    "fig": {
-      "b": "9",
-      "a": "7",
-      "h": "?"
-    },
-    "opciones": ["16", "130", "2", "11,4"],
+    "enunciado": "Dos estudiantes resuelven el mismo triángulo de catetos 9 y 7. ¿Cuál tiene el planteamiento correcto?",
+    "fig": null,
+    "opciones": ["c = √(9² − 7²)", "c = 9² + 7²", "c = (9 + 7)²", "c = √(9² + 7²)"],
     "correcta": 3
   }, {
     "n": 6,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 15 y un cateto de 9. ¿Cuánto mide el otro cateto?",
+    "enunciado": "Se conoce la hipotenusa c = 15 y un cateto a = 9. ¿Cuál expresión halla el otro cateto?",
     "fig": {
       "b": "?",
       "a": "9",
       "h": "15"
     },
-    "opciones": ["24", "144", "12", "6"],
+    "opciones": ["b = √(9² − 15²)", "b = 15 − 9", "b = √(15² − 9²)", "b = √(15² + 9²)"],
     "correcta": 2
   }, {
     "n": 7,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 20 y un cateto de 12. ¿Cuánto mide el otro cateto?",
-    "fig": {
-      "b": "?",
-      "a": "12",
-      "h": "20"
-    },
-    "opciones": ["256", "16", "8", "32"],
+    "enunciado": "¿Cuál es la diferencia clave entre hallar la hipotenusa y hallar un cateto?",
+    "fig": null,
+    "opciones": ["Para el cateto no se usa raíz cuadrada", "Para la hipotenusa se SUMAN los cuadrados; para un cateto se RESTAN", "No hay diferencia, siempre se suman", "Para la hipotenusa se resta; para un cateto se suma"],
     "correcta": 1
   }, {
     "n": 8,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 10 y 10. ¿Cuánto mide la hipotenusa?",
-    "fig": {
-      "b": "10",
-      "a": "10",
-      "h": "?"
-    },
-    "opciones": ["14,1", "20", "200", "11"],
+    "enunciado": "Un estudiante escribe, para hallar un cateto, b = √(9² − 15²). ¿Qué problema tiene su planteamiento?",
+    "fig": null,
+    "opciones": ["Invirtió el orden: dentro de la raíz queda un número negativo; debe ser √(15² − 9²)", "Ninguno, está bien", "Debió sumar en vez de restar", "Olvidó la raíz cuadrada"],
     "correcta": 0
   }, {
     "n": 9,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 25 y un cateto de 7. ¿Cuánto mide el otro cateto?",
-    "fig": {
-      "b": "?",
-      "a": "7",
-      "h": "25"
-    },
-    "opciones": ["18", "32", "576", "24"],
+    "enunciado": "Para catetos 10 y 10, ¿cuál procedimiento da la hipotenusa correcta?",
+    "fig": null,
+    "opciones": ["c = 10 + 10 = 20", "c = √(10² − 10²) = 0", "c = 10² + 10² = 200", "c = √(10² + 10²) = √200"],
     "correcta": 3
   }, {
     "n": 10,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 20 y 21. ¿Cuánto mide la hipotenusa?",
+    "enunciado": "Hipotenusa 25 y cateto 7. Un estudiante plantea b = √(25² − 7²); otro plantea b = 25² − 7². ¿Quién tiene razón?",
+    "fig": null,
+    "opciones": ["Ambos, dan el mismo resultado", "Ninguno de los dos", "El primero, porque hay que sacar la raíz cuadrada de la diferencia de cuadrados", "El segundo, la raíz no es necesaria"],
+    "correcta": 2
+  }, {
+    "n": 11,
+    "tema": "H2",
+    "enunciado": "En la igualdad c² = a² + b², si se quiere despejar el cateto a, se obtiene:",
+    "fig": null,
+    "opciones": ["a = c − b", "a = √(c² − b²)", "a = √(c² + b²)", "a = c² − b²"],
+    "correcta": 1
+  }, {
+    "n": 12,
+    "tema": "H2",
+    "enunciado": "Para la hipotenusa de catetos 20 y 21, ¿qué se calcula dentro de la raíz cuadrada?",
     "fig": {
       "b": "20",
       "a": "21",
       "h": "?"
     },
-    "opciones": ["841", "1", "29", "41"],
-    "correcta": 2
+    "opciones": ["20² + 21² = 400 + 441 = 841", "20 + 21 = 41", "21² − 20² = 41", "20 × 21 = 420"],
+    "correcta": 0
   }, {
-    "n": 11,
+    "n": 13,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 17 y un cateto de 8. ¿Cuánto mide el otro cateto?",
+    "enunciado": "Hipotenusa 17 y un cateto 8. ¿Cuál es el primer paso correcto para hallar el otro cateto?",
     "fig": {
       "b": "?",
       "a": "8",
       "h": "17"
     },
-    "opciones": ["225", "15", "9", "25"],
-    "correcta": 1
-  }, {
-    "n": 12,
-    "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 7 y 24. ¿Cuánto mide la hipotenusa?",
-    "fig": {
-      "b": "7",
-      "a": "24",
-      "h": "?"
-    },
-    "opciones": ["25", "31", "625", "17"],
-    "correcta": 0
-  }, {
-    "n": 13,
-    "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 26 y un cateto de 10. ¿Cuánto mide el otro cateto?",
-    "fig": {
-      "b": "?",
-      "a": "10",
-      "h": "26"
-    },
-    "opciones": ["16", "36", "576", "24"],
+    "opciones": ["Calcular 17² + 8²", "Calcular 17 − 8", "Calcular 8² − 17²", "Calcular 17² − 8² = 289 − 64"],
     "correcta": 3
   }, {
     "n": 14,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 11 y 60. ¿Cuánto mide la hipotenusa?",
-    "fig": {
-      "b": "11",
-      "a": "60",
-      "h": "?"
-    },
-    "opciones": ["3721", "49", "61", "71"],
+    "enunciado": "¿Cuál afirmación sobre el Teorema de Pitágoras es correcta?",
+    "fig": null,
+    "opciones": ["Solo se cumple en triángulos equiláteros", "Sirve para hallar ángulos, no lados", "Solo se cumple en triángulos rectángulos", "Se cumple en cualquier triángulo"],
     "correcta": 2
   }, {
     "n": 15,
@@ -725,7 +677,7 @@ const BANCO = {
   }, {
     "n": 20,
     "tema": "H3",
-    "enunciado": "Una cometa está sujeta por un hilo de 50 m. Si la cometa está a 30 m en horizontal desde quien la sostiene, ¿a qué altura se encuentra?",
+    "enunciado": "Una cometa está sujeta por un hilo de 50 m. Si está a 30 m en horizontal desde quien la sostiene, ¿a qué altura se encuentra?",
     "fig": {
       "b": "30 m",
       "a": "?",
@@ -739,131 +691,111 @@ const BANCO = {
     "tema": "H1",
     "enunciado": "¿Cuál de estos conjuntos de lados forma un triángulo rectángulo?",
     "fig": null,
-    "opciones": ["9, 40, 41", "5, 6, 8", "7, 8, 12", "10, 10, 10"],
-    "correcta": 0
+    "opciones": ["5, 6, 8", "7, 8, 12", "10, 10, 10", "9, 40, 41"],
+    "correcta": 3
   }, {
     "n": 2,
     "tema": "H1",
     "enunciado": "En un triángulo, si el cuadrado del lado mayor es MAYOR que la suma de los cuadrados de los otros dos, el triángulo es:",
     "fig": null,
-    "opciones": ["Obtusángulo", "Rectángulo", "Acutángulo", "Equilátero"],
-    "correcta": 0
+    "opciones": ["Acutángulo", "Equilátero", "Obtusángulo", "Rectángulo"],
+    "correcta": 2
   }, {
     "n": 3,
     "tema": "H1",
     "enunciado": "¿Cuál de estos conjuntos de lados NO forma un triángulo rectángulo?",
     "fig": null,
-    "opciones": ["6, 7, 8", "8, 15, 17", "20, 21, 29", "3, 4, 5"],
-    "correcta": 0
+    "opciones": ["3, 4, 5", "6, 7, 8", "8, 15, 17", "20, 21, 29"],
+    "correcta": 1
   }, {
     "n": 4,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 1,5 cm y 2 cm. ¿Cuánto mide la hipotenusa?",
+    "enunciado": "Un estudiante resuelve catetos 1,5 y 2 así: c = √(1,5² + 2²) = √(2,25 + 4) = √6,25 = 2,5. ¿Es correcto el procedimiento?",
     "fig": {
-      "b": "1,5 cm",
-      "a": "2 cm",
+      "b": "1,5",
+      "a": "2",
       "h": "?"
     },
-    "opciones": ["2,5 cm", "3,5 cm", "6,2 cm", "0,5 cm"],
+    "opciones": ["Sí, el planteamiento y el cálculo son correctos", "No, debió restar los cuadrados", "No, √6,25 no es 2,5", "No, debió sumar 1,5 + 2"],
     "correcta": 0
   }, {
     "n": 5,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 10 y un cateto de 6,5. ¿Cuánto mide el otro cateto?",
+    "enunciado": "Con c = 10 y a = 6,5, un estudiante escribe b = √(10² − 6,5²) y otro b = √(10² + 6,5²). ¿Cuál es correcto?",
     "fig": {
       "b": "?",
       "a": "6,5",
       "h": "10"
     },
-    "opciones": ["3,5", "16,5", "57,8", "7,6"],
+    "opciones": ["El segundo; siempre se suman", "Ambos", "Ninguno", "El primero; al despejar un cateto se RESTAN los cuadrados"],
     "correcta": 3
   }, {
     "n": 6,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 13 y 84. ¿Cuánto mide la hipotenusa?",
-    "fig": {
-      "b": "13",
-      "a": "84",
-      "h": "?"
-    },
-    "opciones": ["7225", "71", "85", "97"],
+    "enunciado": "Al hallar la hipotenusa de catetos 13 y 84 se obtiene √(169 + 7056) = √7225 = 85. ¿Por qué un estudiante podría obtener 97?",
+    "fig": null,
+    "opciones": ["Porque restó los cuadrados", "Porque el 85 está mal", "Porque sumó 13 + 84 en lugar de sumar sus cuadrados", "Porque sacó mal la raíz de 7225"],
     "correcta": 2
   }, {
     "n": 7,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 2,4 cm y 3,2 cm. ¿Cuánto mide la hipotenusa?",
+    "enunciado": "Partiendo de c² = a² + b², ¿cuál de estas reescrituras es INCORRECTA?",
+    "fig": null,
+    "opciones": ["c = √(a² + b²)", "b² = c² + a²", "a² = c² − b²", "b = √(c² − a²)"],
+    "correcta": 1
+  }, {
+    "n": 8,
+    "tema": "H2",
+    "enunciado": "Para los catetos 2,4 cm y 3,2 cm, ¿cuál procedimiento lleva a la hipotenusa correcta?",
     "fig": {
       "b": "2,4 cm",
       "a": "3,2 cm",
       "h": "?"
     },
-    "opciones": ["0,8 cm", "4 cm", "5,6 cm", "16 cm"],
-    "correcta": 1
-  }, {
-    "n": 8,
-    "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 7,5 y un cateto de 4,5. ¿Cuánto mide el otro cateto?",
-    "fig": {
-      "b": "?",
-      "a": "4,5",
-      "h": "7,5"
-    },
-    "opciones": ["6", "3", "12", "36"],
+    "opciones": ["c = √(2,4² + 3,2²) = √(5,76 + 10,24) = √16 = 4", "c = 2,4 + 3,2 = 5,6", "c = √(3,2² − 2,4²)", "c = 2,4² + 3,2² = 16"],
     "correcta": 0
   }, {
     "n": 9,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 16 y 30. ¿Cuánto mide la hipotenusa?",
-    "fig": {
-      "b": "16",
-      "a": "30",
-      "h": "?"
-    },
-    "opciones": ["46", "1156", "14", "34"],
+    "enunciado": "Un estudiante afirma: «si conozco la hipotenusa y un cateto, sumo sus cuadrados y saco la raíz para hallar el otro cateto». ¿Es correcto?",
+    "fig": null,
+    "opciones": ["Sí, siempre se suman", "No, no se usa raíz cuadrada", "Sí, pero sin sacar la raíz", "No; al buscar un cateto se RESTAN los cuadrados, no se suman"],
     "correcta": 3
   }, {
     "n": 10,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 28 y 45. ¿Cuánto mide la hipotenusa?",
+    "enunciado": "¿Cuál procedimiento permite verificar si un triángulo de lados 9, 40 y 41 es rectángulo?",
+    "fig": null,
+    "opciones": ["Comprobar si 9² + 40² + 41² = 0", "Comprobar si 41² − 9² = 40", "Comprobar si 9² + 40² = 41²", "Comprobar si 9 + 40 = 41"],
+    "correcta": 2
+  }, {
+    "n": 11,
+    "tema": "H2",
+    "enunciado": "Para la hipotenusa de catetos 28 y 45, ¿cuál es el cálculo correcto dentro de la raíz, y de dónde saldría un error de 73?",
     "fig": {
       "b": "28",
       "a": "45",
       "h": "?"
     },
-    "opciones": ["2809", "17", "53", "73"],
-    "correcta": 2
+    "opciones": ["28 × 45; 73 es correcto", "28² + 45² = 784 + 2025 = 2809; el 73 sale de sumar 28 + 45", "28 + 45 = 73; está bien", "45² − 28²; 73 es correcto"],
+    "correcta": 1
   }, {
-    "n": 11,
+    "n": 12,
     "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene hipotenusa de 41 y un cateto de 9. ¿Cuánto mide el otro cateto?",
+    "enunciado": "Si en c² = a² + b² se conocen c y b, el despeje correcto del cateto a es:",
+    "fig": null,
+    "opciones": ["a = √(c² − b²)", "a = c² − b²", "a = √(b² − c²)", "a = c − b"],
+    "correcta": 0
+  }, {
+    "n": 13,
+    "tema": "H2",
+    "enunciado": "Hipotenusa 41 y cateto 9. Tres estudiantes plantean: (I) b = √(41² − 9²); (II) b = √(9² − 41²); (III) b = 41 − 9. ¿Cuál(es) está(n) bien planteado(s)?",
     "fig": {
       "b": "?",
       "a": "9",
       "h": "41"
     },
-    "opciones": ["1600", "40", "32", "50"],
-    "correcta": 1
-  }, {
-    "n": 12,
-    "tema": "H2",
-    "enunciado": "Un triángulo rectángulo tiene catetos de 9 cm y 12 cm. ¿Cuál es su perímetro?",
-    "fig": {
-      "b": "9 cm",
-      "a": "12 cm",
-      "h": "?"
-    },
-    "opciones": ["36 cm", "21 cm", "39 cm", "15 cm"],
-    "correcta": 0
-  }, {
-    "n": 13,
-    "tema": "H2",
-    "enunciado": "Los catetos de un triángulo rectángulo miden 5 cm y 12 cm. ¿Cuál es su área?",
-    "fig": {
-      "b": "5 cm",
-      "a": "12 cm",
-      "h": ""
-    },
-    "opciones": ["60 cm²", "13 cm²", "17 cm²", "30 cm²"],
+    "opciones": ["I y III", "Solo III", "II y III", "Solo I"],
     "correcta": 3
   }, {
     "n": 14,
